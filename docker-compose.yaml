@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mongodb-server:
+    image: mongo:6.0
+    container_name: cont-proyecto-node
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rdohaly
+      - MONGO_INITDB_ROOT_PASSWORD=U369QAMhoimC3Q4M
+    ports:
+      - "27017:27017"
+    networks:
+      - net-mongodb-server1
+    volumes:
+      - data-mongodb-volume1:/data/db
+
+networks:
+  net-mongodb-server1:
+
+volumes:
+  data-mongodb-volume1:

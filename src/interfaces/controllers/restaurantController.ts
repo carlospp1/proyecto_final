@@ -1,61 +1,81 @@
 import { Request, Response } from 'express';
-import { RestaurantService } from '../../application/restaurantService';
-import { RestaurantRepository } from '../../infrastructure/restaurantRepository';
-
-const restaurantRepository = new RestaurantRepository();
-const restaurantService = new RestaurantService(restaurantRepository);
+import { getAllRestaurants } from './getAllRestaurants';
+import { getRestaurantById } from './getRestaurantById';
+import { createRestaurant } from './createRestaurant';
+import { updateRestaurant } from './updateRestaurant';
+import { deleteRestaurant } from './deleteRestaurant';
+import { getRestaurantByName } from './getRestaurantByName';
+import RestaurantApplication from '../../application/restaurant.application';
 
 export class RestaurantController {
-  // Obtener todos los restaurantes
+  constructor(private restaurantApplication: RestaurantApplication) {
+    // DESING PATTERN: Inyección de Dependencias
+
+    // Se realiza la vinculación de los métodos con la instancia de la clase
+    this.createRestaurant = this.createRestaurant.bind(this);
+    this.getAllRestaurants = this.getAllRestaurants.bind(this);
+    this.getRestaurantById = this.getRestaurantById.bind(this);
+    this.updateRestaurant = this.updateRestaurant.bind(this);
+    this.deleteRestaurant = this.deleteRestaurant.bind(this);
+  }
+
+  /**
+   * Controlador para obtener todos los restaurantes.
+   * @param req Objeto Request de Express.
+   * @param res Objeto Response de Express.
+   * @returns La respuesta con los restaurantes en formato JSON.
+   */
   async getAllRestaurants(req: Request, res: Response) {
-    try {
-      const restaurants = await restaurantService.getAllRestaurants();
-      res.json(restaurants);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
+    return getAllRestaurants(req, res);
   }
 
-  // Obtener un restaurante por ID
+  /**
+   * Controlador para obtener un restaurante por su ID.
+   * @param req Objeto Request de Express.
+   * @param res Objeto Response de Express.
+   * @returns La respuesta con el restaurante en formato JSON.
+   */
   async getRestaurantById(req: Request, res: Response) {
-    try {
-      const restaurant = await restaurantService.getRestaurantById(req.params.id);
-      if (restaurant == null) {
-        return res.status(404).json({ message: 'Cannot find restaurant' });
-      }
-      res.json(restaurant);
-    } catch (err) {
-      return res.status(500).json({ message: err.message });
-    }
+    return getRestaurantById(req, res);
   }
 
-  // Crear un nuevo restaurante
+  /**
+   * Controlador para crear un nuevo restaurante.
+   * @param req Objeto Request de Express.
+   * @param res Objeto Response de Express.
+   * @returns La respuesta con el nuevo restaurante creado en formato JSON.
+   */
   async createRestaurant(req: Request, res: Response) {
-    try {
-      const newRestaurant = await restaurantService.createRestaurant(req.body);
-      res.status(201).json(newRestaurant);
-    } catch (err) {
-      res.status(400).json({ message: err.message });
-    }
+    return createRestaurant(req, res);
   }
 
-  // Actualizar un restaurante
+  /**
+   * Controlador para actualizar un restaurante existente.
+   * @param req Objeto Request de Express.
+   * @param res Objeto Response de Express.
+   * @returns La respuesta con el restaurante actualizado en formato JSON.
+   */
   async updateRestaurant(req: Request, res: Response) {
-    try {
-      const updatedRestaurant = await restaurantService.updateRestaurant(req.params.id, req.body);
-      res.json(updatedRestaurant);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
+    return updateRestaurant(req, res);
   }
 
-  // Eliminar un restaurante
+  /**
+   * Controlador para eliminar un restaurante existente.
+   * @param req Objeto Request de Express.
+   * @param res Objeto Response de Express.
+   * @returns La respuesta con un mensaje de éxito en formato JSON.
+   */
   async deleteRestaurant(req: Request, res: Response) {
-    try {
-      const result = await restaurantService.deleteRestaurant(req.params.id);
-      res.json(result);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
+    return deleteRestaurant(req, res);
+  }
+
+  /**
+   * Controlador para obtener un restaurante por su nombre.
+   * @param req Objeto Request de Express.
+   * @param res Objeto Response de Express.
+   * @returns La respuesta con el restaurante en formato JSON.
+   */
+  async getRestaurantByName(req: Request, res: Response) {
+    return getRestaurantByName(req, res);
   }
 }

@@ -1,15 +1,16 @@
 {
-    "parser": "@typescript-eslint/parser",
+    "parser": "@typescript-eslint/parser", // Utiliza el parser de TypeScript para analizar el código
     "extends": [
-        "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
-        "plugin:prettier/recommended"
+      "plugin:@typescript-eslint/recommended", // Extiende las reglas recomendadas de ESLint para TypeScript
+      "prettier/@typescript-eslint", // Extiende las reglas de Prettier para TypeScript
+      "plugin:prettier/recommended" // Activa la integración entre ESLint y Prettier
     ],
     "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module"
+      "ecmaVersion": 2020, // Indica la versión de ECMAScript que se está utilizando (2020)
+      "sourceType": "module" // Indica que se está utilizando el modo de módulos (import/export)
     },
     "rules": {
-        "prettier/prettier": "error"
+      "prettier/prettier": "error" // Activa la regla de Prettier como un error en ESLint
     }
-}
+  }
+  

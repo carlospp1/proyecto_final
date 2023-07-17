@@ -1,9 +1,12 @@
-root = true
+root = true  # Configuración global en la raíz del archivo
 
-[*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
+[*]  # Aplica las siguientes configuraciones a todos los archivos
+indent_style = space  # Utiliza espacios para la indentación
+indent_size = 2  # Indentación de 2 espacios
+end_of_line = lf  # Utiliza saltos de línea LF (Line Feed)
+charset = utf-8  # Codificación de caracteres UTF-8
+trim_trailing_whitespace = true  # Elimina los espacios en blanco al final de cada línea
+insert_final_newline = true  # Inserta una nueva línea al final del archivo
+
+[*.md]  # Aplica las siguientes configuraciones solo a los archivos con extensión .md (Markdown)
+indent_size = 4  # Indentación de 4 espacios específicamente para los archivos Markdown

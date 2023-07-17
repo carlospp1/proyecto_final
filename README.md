@@ -1,5 +1,7 @@
 Este es un proyecto de una API de restaurantes. Se puede usar para crear, leer, actualizar y eliminar información de restaurantes.
 
+A lo largo de este proyecto se aplico el "SOLID PRINCIPAL: Single-responsibility principle". Ademas de otros que estan indicados en sus archivos
+
 ------------------------------
 Cómo ejecutar el proyecto
 ------------------------------
@@ -8,9 +10,7 @@ Clone el repositorio.
 
 Instale las dependencias del proyecto con el comando npm install.
 
-Asegúrese de tener MongoDB instalado y ejecutándose en su máquina.
-
-Inicie el servidor con el comando npm start. El servidor comenzará en localhost:3000.
+Inicie el servidor con el comando npm start. 
 
 ------------------------------
 Cómo usar la API en Postman

@@ -47,4 +47,4 @@ COPY --from=DEPLOYMENT /build/package.json ./package.json
 COPY --from=DEPLOYMENT /build/dist ./dist
 
 # Levantar la app desde la imagen
-CMD ["yarn", "run", "prod"]
+CMD ["yarn", "run", "prod", "npm"]

@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongodb-server:
     image: mongo:6.0
-    container_name: cont-proyecto-node
+    container_name: restaurant-project
     environment:
       - MONGO_INITDB_ROOT_USERNAME=rdohaly
       - MONGO_INITDB_ROOT_PASSWORD=U369QAMhoimC3Q4M

@@ -13,7 +13,6 @@ services:
       - mongo-net
     volumes:
       - ./mongo-init:/docker-entrypoint-initdb.d
-      - mongo_data_volume:/data/db
 
 networks:
   mongo-net:

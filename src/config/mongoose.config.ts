@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const connectToDb = async () => {
-    const MONGO_URI = process.env.MONGO_URI || '';
+    const MONGO_URI = "mongodb://usuario:password123@localhost:27017/myRestaurantDB";
     if (!MONGO_URI) {
         throw new Error('Please provide a valid MONGO_URI in the .env file');
     }

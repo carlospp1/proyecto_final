@@ -43,3 +43,13 @@ los datos a insertar son estos
     "cuisine": "Test" //string
 }
 
+
+------------------------------
+Cómo pasar el codigo a producción
+------------------------------
+
+Para pasar a produccion debemos hacer un yarn run build
+
+Una vez creada nuestra carpeta Dist, hacemos un yarn run prod
+
+y con nuestro docker activo, probamos nuevamente las rutas anteriores

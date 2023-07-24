@@ -6,7 +6,7 @@ services:
     container_name: restaurant-project
     environment:
       - MONGO_INITDB_ROOT_USERNAME=usuario
-      - MONGO_INITDB_ROOT_PASSWORD=tumamaenbicicleta
+      - MONGO_INITDB_ROOT_PASSWORD=password123
     ports:
       - "27017:27017"
     networks:

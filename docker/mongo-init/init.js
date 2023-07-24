@@ -5,7 +5,7 @@ db = db.getSiblingDB('myRestaurantDB');
 db.createUser(
     {
         user: "usuario",
-        pwd: "tumamaenbicicleta",
+        pwd: "password123",
         roles: [
             {
                 role: "readWrite",

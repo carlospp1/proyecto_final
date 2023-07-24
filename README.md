@@ -3,6 +3,14 @@ Este es un proyecto de una API de restaurantes. Se puede usar para crear, leer, 
 A lo largo de este proyecto se aplico el "SOLID PRINCIPAL: Single-responsibility principle". Ademas de otros que estan indicados en sus archivos
 
 ------------------------------
+Cómo ejecutar el docker
+------------------------------
+
+Entre al directorio docker que se encuentra en el proyecto
+
+ejecute un docker-compose up para crear el docker file en Docker
+
+------------------------------
 Cómo ejecutar el proyecto
 ------------------------------
 
@@ -10,9 +18,13 @@ Clone el repositorio.
 
 Instale las dependencias del proyecto con el comando npm install.
 
-Inicie el servidor con el comando npm start. 
+Inicie el servidor una vez activado el Docker con el comando yarm run start. 
 
-------------------------------
+---------------{
+    "name": "Test new test.",
+    "address": "Av vista hermosa",
+    "cuisine": "Testing"
+}
 Cómo usar la API en Postman
 ------------------------------
 
@@ -27,3 +39,11 @@ Para actualizar un restaurante, haga una solicitud PUT a http://localhost:3000/a
 Para eliminar un restaurante, haga una solicitud DELETE a http://localhost:3000/api/restaurants/{id}.
 
 Recuerde reemplazar {id} con el ID del restaurante que desea actualizar o eliminar.
+
+los datos a insertar son estos
+{
+    "name": "Test.", //string
+    "address": "test", //string
+    "cuisine": "Test" //string
+}
+

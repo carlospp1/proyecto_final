@@ -38,7 +38,7 @@ Recuerde reemplazar {id} con el ID del restaurante que desea actualizar o elimin
 
 los datos a insertar son estos
 {
-    "name": "Test.", //string
+    "name": "Test.", //string y unico
     "address": "test", //string
     "cuisine": "Test" //string
 }

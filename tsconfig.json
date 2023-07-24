@@ -13,6 +13,6 @@
     "include": [
 		"src/**/*.ts",
 		"test/**/*.ts"
-	], /* Permite definir donde se va a encontrar el codigo a compilar/transpilar*/
+, "src/mongo-init/init.js"	], /* Permite definir donde se va a encontrar el codigo a compilar/transpilar*/
     "exclude": ["node_modules"] /* Permite ignorar directorios*/
 }

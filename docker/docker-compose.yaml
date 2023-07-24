@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: restaurant-project
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=usuario
+      - MONGO_INITDB_ROOT_PASSWORD=tumamaenbicicleta
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-net
+    volumes:
+      # - mongo_data_volume:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+
+networks:
+  mongo-net:
+
+volumes:
+  mongo_data_volume:

@@ -3,12 +3,19 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const connectToDb = () => {
+const connectToDb = async () => {
     const MONGO_URI = process.env.MONGO_URI || '';
-    mongoose
-        .connect(MONGO_URI)
-        .then(() => console.log('Connected to MongoDB'))
-        .catch((error) => console.log('Failed to connect to MongoDB', error));
+    if (!MONGO_URI) {
+        throw new Error('Please provide a valid MONGO_URI in the .env file');
+    }
+    try {
+        await mongoose.connect(MONGO_URI);
+        console.log('Successfully connected to MongoDB');
+    } catch (error) {
+        console.error('Error connecting to MongoDB', error);
+    }
 };
+
+
 
 export default connectToDb;

@@ -1,0 +1,14 @@
+db = db.getSiblingDB('myRestaurantDB');
+
+db.createUser(
+    {
+        user: "user",
+        pwd: "pass",
+        roles: [
+            {
+                role: "readWrite",
+                db: "myRestaurantDB"
+            }
+        ]
+    }
+);

@@ -20,11 +20,7 @@ Instale las dependencias del proyecto con el comando npm install.
 
 Inicie el servidor una vez activado el Docker con el comando yarm run start. 
 
----------------{
-    "name": "Test new test.",
-    "address": "Av vista hermosa",
-    "cuisine": "Testing"
-}
+---------------
 Cómo usar la API en Postman
 ------------------------------
 
